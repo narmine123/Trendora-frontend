@@ -1,0 +1,23 @@
+<!--<dx-popup [(visible)]="visible" [showCloseButton]="true" [width]="600" [height]="500">
+    <p>ID: {{ customer?.id }}</p>
+    <p>Title: {{ customer?.title }}</p>
+    <p>Price: {{ customer?.price }}</p>
+    <p>Category: {{ customer?.category }}</p>
+    <p>Description: {{ customer?.description }}</p>
+    <p>Rating: {{ customer?.rating.rate }} ({{ customer?.rating.count }} votes)</p>
+    <img [src]="customer?.image" alt="{{ customer?.title }}" class="popup-image">
+    <button class="close-button" (click)="closePopup()">Close</button>
+</dx-popup>
+-->
+
+
+<dx-popup [(visible)]="visible" [showCloseButton]="true" [width]="600" [height]="500">
+    <p>ID: {{ product?.id }}</p>
+    <p>Title: {{ product?.title }}</p>
+    <p>Price: {{ product?.price }}</p>
+    <p>Category: {{ product?.category }}</p>
+    <p>Description: {{ product?.description }}</p>
+    <p>Rating: {{ product?.rating.rate }} ({{ product?.rating.count }} votes)</p>
+    <img [src]="product?.image" alt="{{ product?.title }}" class="popup-image">
+    <button class="close-button" (click)="closePopup()">Close</button>
+</dx-popup>

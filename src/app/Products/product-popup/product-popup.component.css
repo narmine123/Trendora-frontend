@@ -1,0 +1,35 @@
+::ng-deep .dx-popup-content {
+    background-color: #fad5be;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  ::ng-deep .dx-popup-content .popup-inner-content {
+    padding: 20px;
+  }
+  
+  ::ng-deep .dx-popup-content .popup-image {
+    display: block;
+    width: 100px;  /* Adjust this to make the image smaller */
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  ::ng-deep .dx-popup-content p {
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  .close-button {
+    background-color: #6e5039; /* Blue button background */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 5px 10px; /* Button padding */
+    cursor: pointer; /* Pointer cursor for buttons */
+    margin: 0 5px; /* Space between buttons */
+  }
+  
+  .close-button:hover {
+    background-color: #6e5039; /* Darker blue on hover */
+  }

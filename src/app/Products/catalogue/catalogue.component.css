@@ -1,0 +1,186 @@
+/* Ensure the DataGrid is responsive and properly sized */
+dx-data-grid {
+  width: 100%;
+  /* Use full width of the container */
+  margin: 0 auto;
+  /* Center the table if needed */
+}
+
+/* Enforce consistent column alignment */
+dx-data-grid .dx-datagrid-headers {
+  display: table;
+  /* Ensure header acts like a table row */
+  table-layout: fixed;
+  /* Fixed layout for proper alignment */
+  width: 100%;
+  /* Match the grid width */
+}
+
+/* Control the size of each column for alignment */
+dx-data-grid .dx-datagrid-cell {
+  white-space: nowrap;
+  /* Prevent text wrapping in cells */
+  overflow: hidden;
+  /* Hide overflowing content */
+  text-overflow: ellipsis;
+  /* Show ellipsis for long content */
+}
+
+/* Add padding to the DataGrid cells for better readability */
+dx-data-grid .dx-datagrid-content {
+  padding: 10px;
+}
+
+/* Style the action buttons in the Actions column */
+.button-info {
+  background-color: #6e5039;
+  /* Blue button background */
+  color: white;
+  /* White text color */
+  border: none;
+  /* Remove border */
+  border-radius: 4px;
+  /* Rounded corners */
+  padding: 5px 10px;
+  /* Button padding */
+  cursor: pointer;
+  /* Pointer cursor for buttons */
+  margin: 0 5px;
+  /* Space between buttons */
+}
+
+.button-info:hover {
+  background-color: #6e5039;
+  /* Darker blue on hover */
+}
+
+/* Adjust the Actions column width for buttons */
+dx-data-grid .dx-datagrid-actions-column {
+  width: 150px;
+  /* Enough space for buttons */
+  text-align: center;
+  /* Center-align buttons */
+}
+
+/* Set image size within the grid */
+dx-data-grid img {
+  display: block;
+  max-width: 50px;
+  /* Adjust as per design */
+  max-height: 50px;
+  /* Adjust as per design */
+  margin: auto;
+  /* Center images */
+}
+
+/* Style the search panel for consistency */
+dx-data-grid .dx-datagrid-search-panel {
+  margin-bottom: 10px;
+  /* Add spacing below the search panel */
+}
+
+/* Ensure selection and grouping headers align properly */
+dx-data-grid .dx-datagrid-selection,
+dx-data-grid .dx-datagrid-grouping {
+  text-align: left;
+  /* Align selection and grouping headers */
+  padding: 5px;
+  /* Add padding */
+}
+
+.catalogue-page {
+  background-color: #e7ba9f;
+  /* Set the background color */
+  min-height: 100vh;
+  /* Ensure it spans the full height of the page */
+  padding: 16px;
+  /* Optional: Add padding for spacing */
+  box-sizing: border-box;
+  /* Include padding in element size */
+}
+
+body {
+  background-color: #e7ba9f;
+  /* Set background for the whole page */
+  margin: 0;
+  /* Remove default margins */
+  font-family: Arial, sans-serif;
+  /* Optional: Set a font for consistency */
+}
+
+/* Align pager items inline and add spacing */
+.dx-datagrid-pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  /* Spacing between buttons */
+  margin-top: 16px;
+}
+
+/* Style page number buttons */
+.dx-page {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #d3a588;
+  /* Button color */
+  color: #fff;
+  /* Text color */
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Highlight the selected page */
+.dx-page.dx-selection {
+  background-color: #a16f5a;
+  /* Active page color */
+  font-weight: bold;
+}
+
+/* Add hover effect for page buttons */
+.dx-page:hover {
+  background-color: #b9896e;
+}
+
+/* Style the navigation buttons (Prev/Next) */
+.dx-navigate-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #a16f5a;
+  /* Navigation button color */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  /* Circular buttons */
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Add hover effect for navigation buttons */
+.dx-navigate-button:hover {
+  background-color: #b9896e;
+}
+
+/* Replace the text with arrows (flaiches) */
+.dx-navigate-button:before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.dx-navigate-button.dx-prev:before {
+  border-width: 6px 8px 6px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+.dx-navigate-button.dx-next:before {
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent #fff;
+}

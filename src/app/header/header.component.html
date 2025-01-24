@@ -1,0 +1,61 @@
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-lg-2">
+                <div class="header__logo">
+                    <a routerLink="/"><img src="assets/img/logo.png" alt="Logo"></a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-7">
+                <nav class="header__menu">
+                    <ul>
+                        <li class="active"><a routerLink="/">Home</a></li>
+                        <li><a routerLink="/catalogue">Catalogue</a></li>
+                        <li><a routerLink="/shop">...</a></li>
+                        <li class="dropdown">
+                            <a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a routerLink="/product-details">Product Details</a></li>
+                                <li><a routerLink="/cart">Shop Cart</a></li>
+                                <li><a routerLink="/checkout">Checkout</a></li>
+                                <li><a routerLink="/blog-details">Blog Details</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#">Account</a>
+                            <ul class="dropdown">
+                                <li><a routerLink="/profile">Profile Info</a></li>
+                                <li><a routerLink="/user/:id">User Details</a></li>
+                                <li><a routerLink="#" (click)="onLogout()">Logout</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__right">
+                    <div class="header__right__auth">
+                        <a routerLink="/login">Login</a>
+                        <a routerLink="/register">Register</a>
+                    </div>
+                    <ul class="header__right__widget">
+                        <li><a routerLink="/cart"  ><span class="bi bi-bag"></span>
+                            <!-- <div class="tip">2</div> -->
+                        </a></li>
+                        <li><a routerLink="/order"><span class="bi bi-wallet2"></span>
+                            <!-- <div class="tip">2</div> -->
+                        </a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="canvas__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->

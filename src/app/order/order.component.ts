@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ReactiveFormsModule,FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { OrderService } from '../order.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-order',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './order.component.html',
-  styleUrl: './order.component.css'
+  styleUrl: './order.component.css',
+  encapsulation: ViewEncapsulation.ShadowDom,
+
 })
 export class OrderComponent implements OnInit{
   selectedProducts : any[]=[];
@@ -45,7 +48,7 @@ export class OrderComponent implements OnInit{
         products : this.selectedProducts,
         totalPrice : this.calculateTotal()
       };
-    
+
      // Envoyer les données au backend
      this.orderService.createOrder(OrderData).subscribe(
       (response) => {
@@ -57,5 +60,5 @@ export class OrderComponent implements OnInit{
     );
   }
 }
-    
+
 }

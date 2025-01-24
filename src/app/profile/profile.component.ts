@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +14,7 @@ import { AuthService } from '../auth.service';
 })
 export class ProfileComponent {
   
-   constructor(private authService: AuthService) {}
+   constructor(private authService: AuthService, private router: Router) {}
    client = {
     numerotelephone: null,
     nationality:'',
@@ -36,6 +37,9 @@ export class ProfileComponent {
       }
     );
   }
-  
+
+  onseen() {
+    this.router.navigate(['/user/:id']);
+  }
 
 }

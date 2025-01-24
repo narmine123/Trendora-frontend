@@ -30,7 +30,7 @@ export class LoginComponent {
         console.log('Login successful', response);
         localStorage.setItem('access_token', response.access_token); // Stocker le token
         const token = localStorage.getItem('access_token');
-        localStorage.removeItem('access_token');//// Supprimer l'access token
+        //localStorage.removeItem('access_token');//// Supprimer l'access token
       },
       (error) => {
         console.error('Login failed: Nom d’utilisateur ou mot de passe incorrect.');
@@ -38,12 +38,11 @@ export class LoginComponent {
       }
     );
   }
-    
-  
-   
+
+
+
 
 
 }
 
- 
- 
+

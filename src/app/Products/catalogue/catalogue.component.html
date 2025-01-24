@@ -1,0 +1,178 @@
+<div class="catalogue-page">
+<button class="button-info" (click)="openFormPopup1()">add Product</button>
+
+
+
+<dx-data-grid
+  [dataSource]="products"
+  [showBorders]="true"
+  keyExpr="id"
+  [allowColumnReordering]="true"
+  [paging]="{ enabled: true, pageSize: 5 }"
+  [pager]="{
+   visible: true,
+    displayMode: 'full',
+    showPageSizeSelector: false,
+    showNavigationButtons: true,
+    showInfo: false}"
+  [searchPanel]="{ visible: true, width: 240, placeholder: 'Search...' }">
+
+
+  <dxi-column dataField="id" caption="id" cellTemplate="idTemplate"></dxi-column>
+  <dxi-column dataField="title" caption="Title" cellTemplate="titleTemplate"></dxi-column>
+  <dxi-column dataField="price" caption="Price" cellTemplate="priceTemplate"></dxi-column>
+  <dxi-column dataField="category" caption="Category" cellTemplate="categoryTemplate"></dxi-column>
+  <dxi-column dataField="description" caption="Description"cellTemplate="descriptionTemplate"></dxi-column>
+  <dxi-column dataField="rating" caption="Rating" cellTemplate="ratingTemplate"></dxi-column>
+  <dxi-column dataField="image" caption="Image" cellTemplate="imageTemplate"></dxi-column>
+
+
+
+  <div *dxTemplate="let option of 'idTemplate'">
+    {{ option.data.id }}
+  </div>
+
+  <div *dxTemplate="let option of 'titleTemplate'">
+    {{ option.data.title }}
+  </div>
+
+  <div *dxTemplate="let option of 'priceTemplate'">
+    {{option.data.price }}
+  </div>
+
+  <div *dxTemplate="let option of 'categoryTemplate'">
+    {{ option.data.category }}
+  </div>
+
+  <div *dxTemplate="let option of 'descriptionTemplate'">
+    {{ option.data.description }}
+  </div>
+
+  <div *dxTemplate="let option of 'ratingTemplate'">
+    {{ option.data.rating.rate}} / {{ option.data.rating.count}}
+  </div>
+
+
+ <div *dxTemplate="let option of 'imageTemplate'">
+    <img [src]="option.data.image" alt="{{option.data.title}}" width="50">
+  </div>
+
+  <dxi-column
+     caption="Actions"
+     cellTemplate="actionTemplate">
+  </dxi-column>
+  <div *dxTemplate="let option of 'actionTemplate'">
+  <button class="button-info" (click)="showInfo(option.data)">More Info</button>
+  <button class="button-info" (click)="openFormPopup(option.data)">Edit Product</button>
+  <button class="button-info" (click)="addToCart(option.data)" >Add To Cart</button>
+
+
+  </div>
+  <dxo-selection mode="multiple"></dxo-selection>
+  <dxo-grouping [autoExpandAll]="true"></dxo-grouping>
+
+
+
+
+</dx-data-grid>
+<app-product-popup
+  [product]="currentProduct"
+  [visible]="popupVisible"
+  (close)="closePopup()">
+</app-product-popup>
+<app-form-popup
+  [visible]="formPopupVisible"
+  [product]="selectedProductId"
+  [isEditMode]="isEditMode"
+  (close)="closeFormPopup()">
+</app-form-popup>
+</div>
+
+
+<!--<div class="catalogue-page">
+<button class="button-info" (click)="openFormPopup1()">add Product</button>
+
+
+
+<dx-data-grid
+  [dataSource]="customers"
+  [showBorders]="true"
+  keyExpr="id"
+  [allowColumnReordering]="true"
+  [paging]="{ enabled: true, pageSize: 5 }"
+  [pager]="{
+   visible: true,
+    displayMode: 'full',
+    showPageSizeSelector: false,
+    showNavigationButtons: true,
+    showInfo: false}"
+  [searchPanel]="{ visible: true, width: 240, placeholder: 'Search...' }">
+
+
+  <dxi-column dataField="id" caption="id" cellTemplate="idTemplate"></dxi-column>
+  <dxi-column dataField="title" caption="Title" cellTemplate="titleTemplate"></dxi-column>
+  <dxi-column dataField="price" caption="Price" cellTemplate="priceTemplate"></dxi-column>
+  <dxi-column dataField="category" caption="Category" cellTemplate="categoryTemplate"></dxi-column>
+  <dxi-column dataField="description" caption="Description"cellTemplate="descriptionTemplate"></dxi-column>
+  <dxi-column dataField="rating" caption="Rating" cellTemplate="ratingTemplate"></dxi-column>
+  <dxi-column dataField="image" caption="Image" cellTemplate="imageTemplate"></dxi-column>
+
+
+
+  <div *dxTemplate="let option of 'idTemplate'">
+    {{ option.data.id }}
+  </div>
+
+  <div *dxTemplate="let option of 'titleTemplate'">
+    {{ option.data.title }}
+  </div>
+
+  <div *dxTemplate="let option of 'priceTemplate'">
+    {{option.data.price }}
+  </div>
+
+  <div *dxTemplate="let option of 'categoryTemplate'">
+    {{ option.data.category }}
+  </div>
+
+  <div *dxTemplate="let option of 'descriptionTemplate'">
+    {{ option.data.description }}
+  </div>
+
+  <div *dxTemplate="let option of 'ratingTemplate'">
+    {{ option.data.rating.rate}} / {{ option.data.rating.count}}
+  </div>
+
+
+ <div *dxTemplate="let option of 'imageTemplate'">
+    <img [src]="option.data.image" alt="{{option.data.title}}" width="50">
+  </div>
+
+  <dxi-column
+     caption="Actions"
+     cellTemplate="actionTemplate">
+  </dxi-column>
+  <div *dxTemplate="let option of 'actionTemplate'">
+  <button class="button-info" (click)="showInfo(option.data)">More Info</button>
+  <button class="button-info" (click)="openFormPopup(option.data)">Edit Product</button>
+
+  </div>
+  <dxo-selection mode="multiple"></dxo-selection>
+  <dxo-grouping [autoExpandAll]="true"></dxo-grouping>
+
+
+
+
+</dx-data-grid>
+<app-customer-popup
+  [customer]="currentCustomer"
+  [visible]="popupVisible"
+  (close)="closePopup()">
+</app-customer-popup>
+<app-form-popup
+  [visible]="formPopupVisible"
+  [customer]="selectedCustomerId"
+  [isEditMode]="isEditMode"
+  (close)="closeFormPopup()">
+</app-form-popup>
+</div>-->
