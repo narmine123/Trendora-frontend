@@ -60,11 +60,8 @@ export class AuthService {
     return this.http.post(`${this.link}/recover-password`, email);
   }
 
-  // Méthode pour récupérer les détails de l'utilisateur et son profil
-  /*getUserWithProfile(id: number): Observable<any> {
-      return this.http.get<any>(`${this.link}/${id}`);
-    }
 
+/*
     // Méthode pour récupérer le profil de l'utilisateur
     getProfileById(id: number): Observable<any> {
       return this.http.get<any>(`${this.link}/profile/${id}`);

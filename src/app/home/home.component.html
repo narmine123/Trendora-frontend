@@ -806,13 +806,14 @@
               <div class="input-wrapper">
                 <ion-icon name="mail-outline"></ion-icon>
 
-                <input type="email" name="emal" placeholder="Enter your email" required class="input-field">
+                <input type="text" name="emal" placeholder="Enter your email" required class="input-field">
               </div>
-
-              <button type="submit" class="btn btn-primary w-100">
+              
+              <button type="submit" class="site-btn" (click)="onsubmit()">
                 <span>Subscribe</span>
 
                 <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+
               </button>
 
             </form>

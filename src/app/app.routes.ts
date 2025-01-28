@@ -8,6 +8,7 @@ import { ResetComponent } from './reset/reset.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CartComponent } from './Carts/cart/cart.component';
 import { HomeComponent } from './home/home.component';
+import { LoginGuard } from './guard/login.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +21,7 @@ export const routes: Routes = [
     component: RegisterComponent /*canActivate:[LoginGuard]*/,
   },
   { path: 'reset', component: ResetComponent },
-  { path: 'user/:id', component: UserDetailComponent },
+  { path: 'user/:id', component: UserDetailComponent},
   { path: 'cart', component: CartComponent },
   //{ path: 'home', component: HomeComponent }
 

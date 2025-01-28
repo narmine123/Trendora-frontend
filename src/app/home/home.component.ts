@@ -12,4 +12,14 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 })
 export class HomeComponent {
 
-}
+
+ 
+  onsubmit():void{
+    
+        alert("The email  has been sent.");
+        console.log("The email  has been sent.");
+      }
+    
+  }
+ 
+

@@ -22,9 +22,7 @@ export class ProfileComponent {
     birthdate:null,
     ville:'',
     adresselivraison:''
-  }
- 
-      
+  } 
   onSubmit(): void {
     this.authService.save(this.client).subscribe(
       (response) => {
@@ -41,5 +39,6 @@ export class ProfileComponent {
   onseen() {
     this.router.navigate(['/user/:id']);
   }
+ 
 
 }
