@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewEncapsulation } from '@angular/core';
 
 
 @Component({
@@ -7,19 +7,14 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-    schemas: [CUSTOM_ELEMENTS_SCHEMA], // Ajoutez cette ligne
-
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  encapsulation: ViewEncapsulation.ShadowDom, 
 })
 export class HomeComponent {
-
-
- 
   onsubmit():void{
     
-        alert("The email  has been sent.");
-        console.log("The email  has been sent.");
-      }
-    
+    alert("The email  has been sent.");
+    console.log("The email  has been sent.");
   }
- 
 
+}

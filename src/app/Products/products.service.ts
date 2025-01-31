@@ -8,8 +8,8 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ProductsService {
 
-  // private pathUrl="http://localhost:3000/products"
-  private pathUrl = 'https://fakestoreapi.com/products';
+  private pathUrl="http://localhost:3000/products"
+  //private pathUrl = 'https://fakestoreapi.com/products';
 
   constructor(private http: HttpClient, private router: Router) {}
 
